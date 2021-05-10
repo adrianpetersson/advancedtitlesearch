@@ -6,7 +6,8 @@ const Movie = ({movie}) => {
     const [link,setLink] =useState("")
     useEffect(()=> {
         ratingCall()
-    })
+          // eslint-disable-next-line react-hooks/exhaustive-deps
+    },[])
     
 
     const options = {
