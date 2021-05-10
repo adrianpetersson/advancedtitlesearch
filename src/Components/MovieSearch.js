@@ -3,6 +3,7 @@ import Movie from "./Movie"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronCircleRight } from '@fortawesome/free-solid-svg-icons'
 import { faChevronCircleLeft } from '@fortawesome/free-solid-svg-icons'
+/*eslint-disable eqeqeq*/
 const MovieSearch = ({setShowSearch,showSearch}) => {
 
     const [firstDate,setFirstDate] = useState(2000);
@@ -14,6 +15,7 @@ const MovieSearch = ({setShowSearch,showSearch}) => {
 
     useEffect(()=> {
         apiCall()
+         // eslint-disable-next-line react-hooks/exhaustive-deps
     },[page])
     
     const url = `https://api.themoviedb.org/3/discover/movie?api_key=633ba37deca1e136cf65aac199eb78e9&language=en-US&sort_by=popularity.desc&with_genres=${category}&release_date.gte=${firstDate}-01-01&release_date.lte=${lastDate}-01-01&vote_count.gte=${radio}&page=${page}`
