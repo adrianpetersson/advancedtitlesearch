@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react'
+import React from 'react'
 import cover from "../assets/missing_cover.png"
 import { motion } from "framer-motion"
 const Movie = ({movie}) => {
