@@ -1,30 +1,20 @@
-import React,{useEffect,useState} from 'react'
+import React,{useEffect} from 'react'
 import cover from "../assets/missing_cover.png"
 import { motion } from "framer-motion"
 const Movie = ({movie}) => {
 
  
     const baseUrl = "https://image.tmdb.org/t/p/w185_and_h278_bestv2"
-    const [link,setLink] =useState("")
-    const [clickedLink,setClickedLink] = useState(false)
 
-    //useEffect(()=>{
-      //  ratingCall()
-    //},[link])
-    
-     
-  
-
-    const options = {
-        "method": "GET",
-        "headers": {
-            "x-rapidapi-key": process.env.REACT_APP_RAPIDAPI_API_KEY,
-            "x-rapidapi-host": "imdb-internet-movie-database-unofficial.p.rapidapi.com"
-        }
-    }
-
-    
     const ratingCall = async() => {
+
+        const options = {
+            "method": "GET",
+            "headers": {
+                "x-rapidapi-key": process.env.REACT_APP_RAPIDAPI_API_KEY,
+                "x-rapidapi-host": "imdb-internet-movie-database-unofficial.p.rapidapi.com"
+            }
+        }
         
         try{ 
             const res = await fetch(`https://imdb-internet-movie-database-unofficial.p.rapidapi.com/search/${movie.title}`,options)
@@ -35,9 +25,7 @@ const Movie = ({movie}) => {
         }
         
     }
-    const externalLinkHandler = () => {
-        setClickedLink(true)
-    }
+
     return (
         
     <motion.div onClick={ratingCall}className="card"
