@@ -14,7 +14,7 @@
 .hero-text{
   display:flex;
   align-items:center;
-  justify-content:start;
+  justify-content:flex-start;
 }
 .form {
   padding: 0 2rem;

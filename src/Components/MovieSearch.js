@@ -1,6 +1,5 @@
 import React, {useState, useEffect} from 'react'
 import Movie from "./Movie"
-import { motion } from "framer-motion"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faChevronCircleRight } from '@fortawesome/free-solid-svg-icons'
 import { faChevronCircleLeft } from '@fortawesome/free-solid-svg-icons'
@@ -12,11 +11,11 @@ const MovieSearch = ({setShowSearch,showSearch}) => {
     const [category, setCategory] = useState("27")
     const [radio,setRadio] = useState(0)
     const [page,setPage] =useState(1)
-    const [title,setTitle]=useState([])
 
     useEffect(()=> {
         apiCall()
     },[page])
+    
     const url = `https://api.themoviedb.org/3/discover/movie?api_key=633ba37deca1e136cf65aac199eb78e9&language=en-US&sort_by=popularity.desc&with_genres=${category}&release_date.gte=${firstDate}-01-01&release_date.lte=${lastDate}-01-01&vote_count.gte=${radio}&page=${page}`
   
     const searchMovies = (e) => {
@@ -33,9 +32,7 @@ const MovieSearch = ({setShowSearch,showSearch}) => {
             console.error(err)
         }
     }
-    const titleHandler =(title) =>{
-        setTitle(title.push(title))
-    }
+ 
     
 
     return (
@@ -64,7 +61,7 @@ const MovieSearch = ({setShowSearch,showSearch}) => {
     value={10000}
     onChange={(e)=>{setRadio(e.target.value)}}/>
     </div>
-    <label className="label" for="cars">Category</label>
+    <label className="label">Category</label>
     </div>
     <select className="input" value={category} onChange={(e)=>{setCategory(e.target.value) && searchMovies()}}>
         <option value="27">Horror</option>

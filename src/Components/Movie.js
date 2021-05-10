@@ -6,14 +6,13 @@ const Movie = ({movie}) => {
     const [link,setLink] =useState("")
     useEffect(()=> {
         ratingCall()
-    },[])
+    })
     
-  
-    const [rating,setRating] =useState(0)
+
     const options = {
         "method": "GET",
         "headers": {
-            "x-rapidapi-key": "8078e2eb4emsh510816e6de7fc69p1f04cbjsn4550f419a8fa",
+            "x-rapidapi-key": process.env.REACT_APP_RAPIDAPI_API_KEY,
             "x-rapidapi-host": "imdb-internet-movie-database-unofficial.p.rapidapi.com"
         }
     }
@@ -31,7 +30,6 @@ const Movie = ({movie}) => {
     }
 
     let imdbLink = `https://www.imdb.com/title/${link}`
-    console.log(imdbLink)
     return (
         
     <motion.div onClick={() => window.open(imdbLink, '_blank')}className="card"
