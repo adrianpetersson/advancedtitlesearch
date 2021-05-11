@@ -1,7 +1,7 @@
 # Advanced title Search ++
 
-A React-based movie-search app based on IMDB's advanced title search feature.
-[Explore the live demo](hhttps://advancedtitlesearch.netlify.app/) 
+A React-based movie-search app based on IMDB's advanced title search feature.\
+[Explore the live demo](https://advancedtitlesearch.netlify.app/) 
 
 ## APIs
 
