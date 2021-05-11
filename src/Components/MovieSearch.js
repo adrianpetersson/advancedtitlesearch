@@ -35,36 +35,25 @@ const MovieSearch = ({setShowSearch,showSearch}) => {
         }
     }
  
-    
-
     return (
         <>
     {showSearch ? (
     <form className="form" onSubmit={searchMovies}>
-    <div>
+    <div className="text-inputs">
     <label className="label">Release date</label>
     <input className="input-sm" type="number" min="1900" placeholder="2000" onChange={(e) => setFirstDate(e.target.value)}/>
     <label className="label">to</label>
     <input className="input-sm" type="number" min="1900" placeholder="2021" onChange={(e) => setLastDate(e.target.value)}/>
-    <div className="radios">
-    <label className="label">Default</label>
-    <input type="radio" checked={radio == 0 }
-    value={0}onChange={(e)=>{setRadio(e.target.value)}}/>
-    <label className="label">Popular</label>
-    <input type="radio" checked={radio == 1000 }
-    value={1000}
-    onChange={(e)=>{setRadio(e.target.value)}}/>
-    <label className="label">Very popular</label>
-    <input type="radio" checked={radio == 5000 }
-    value={5000}
-    onChange={(e)=>{setRadio(e.target.value)}}/>
-    <label className="label">Cult status</label>
-    <input type="radio" checked={radio == 10000 }
-    value={10000}
-    onChange={(e)=>{setRadio(e.target.value)}}/>
+    <br/>
     </div>
+    <label className="label">Sort by:</label>
+    <select className="input" onChange={(e)=>{setRadio(e.target.value)}}>
+        <option value={0}>Trending</option>
+        <option value={1000}>Popular</option>
+        <option value={5000}>Very Popular</option>
+        <option value={10000} >Cult Status</option>
+    </select>
     <label className="label">Category</label>
-    </div>
     <select className="input" value={category} onChange={(e)=>{setCategory(e.target.value) && searchMovies()}}>
         <option value="27">Horror</option>
         <option value="53">Thriller</option>
@@ -83,7 +72,7 @@ const MovieSearch = ({setShowSearch,showSearch}) => {
                     )
                 )}</div>
                 <div className="pages">
-                <FontAwesomeIcon icon={faChevronCircleLeft} className="fa" onClick={()=>setPage(page - 1)} />
+                <FontAwesomeIcon icon={faChevronCircleLeft} className={page > 1 ?"fa":"fas"} onClick={()=>setPage(page - 1)} />
                 <FontAwesomeIcon icon={faChevronCircleRight} className="fa" onClick={()=>setPage(page + 1)} />
                 </div>
                 </div>

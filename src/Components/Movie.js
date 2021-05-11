@@ -32,10 +32,11 @@ const Movie = ({movie}) => {
         whileHover={{ scale: 1.05 }}
         transition={{ ease: "easeOut", duration: 0.3 }}>
                         <img src={movie.poster_path ? baseUrl + movie.poster_path : cover} alt=""/>
+                        <div className="rating">{movie.vote_average}</div>
+                        <div className="title-wrapper">
                         <h3 className="title">{movie.title}</h3>
-                         <p><small>{movie.release_date.slice(0,4)}</small></p>
-                         <div className="rating">{movie.vote_average}</div>
-                         <p>{movie.imdb_id}</p>
+                         <p><small>{movie.release_date.slice(0,4)}</small></p></div>
+                         
                         </motion.div>
     )
 }
