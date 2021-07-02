@@ -30,7 +30,7 @@ const Movie = ({movie}) => {
         
     <motion.div onClick={ratingCall}className="card"
         whileHover={{ scale: 1.05 }}
-        transition={{ ease: "easeOut", duration: 0.3 }}>
+        transition={{ ease: "easeOut", duration: 0.2 }}>
                         <img src={movie.poster_path ? baseUrl + movie.poster_path : cover} alt=""/>
                         <div className="rating">{movie.vote_average}</div>
                         <div className="title-wrapper">
