@@ -14,4 +14,4 @@ Enables user to explore movie suggestions based on ratings, genre and year.
 
 ## Testing
 
-Simply testing git flows here. 
+Now removing data as a part of git flow training.
