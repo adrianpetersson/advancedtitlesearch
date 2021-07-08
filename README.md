@@ -11,3 +11,7 @@ The app uses the [TMDB API](https://developers.themoviedb.org/3/)
 ## Usage
 
 Enables user to explore movie suggestions based on ratings, genre and year.  
+
+## Testing
+
+Simply testing git flows here. 
